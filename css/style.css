@@ -1,0 +1,22 @@
+body {
+	background-color:#fff;
+	color:black;
+}
+table, td, th {  
+	border: 1px solid #ddd;
+	text-align: left;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th, td {
+	padding: 15px;
+}
+#centre {
+	max-width:100%; 
+	margin 0 auto;text-align:center
+}
+#bouton {
+	padding:5px;
+}
