@@ -17,7 +17,10 @@ http://trgrd.site/
 
 trgrd est un projet basé sur le serveur DNS PHP de @yswery (https://github.com/yswery/PHP-DNS-SERVER).
 Le code permet de créer des dossiers Windows à la volée contenant un dossier, lui-même contenant un fichier système desktop.ini. 
-Ce fichier système de Windows contient une URL générée dynamiquement sous la forme suivante : %USERNAME%.%USERDOMAIN%.SEPARATEUR.trgrd.site.
+
+Ce fichier système de Windows permet de définir une icône au dossier, mais contient une URL générée dynamiquement pour cela, sous la forme suivante : %USERNAME%.%USERDOMAIN%.SEPARATEUR.ID_UNIQUE.trgrd.site\resource.dll (le fichier resource.dll est fictif mais supposé contenir l'icône).
+
+Windows effectue automatiquement une requête DNS pour chercher l'icône du dossier dans resource.dll. La requête est interceptée pour récupérer non seulement la date de l'action, mais aussi les variables %USERNAME% et %USERDOMAIN% que Windows fait fuiter. (Découverte initiale par Alex Inführ https://insert-script.blogspot.com/2018/08/leaking-environment-variables-in_20.html)
 
 
 # Instructions
